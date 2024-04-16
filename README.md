@@ -1,6 +1,6 @@
 # Neo Legibility Effort Model
 
-Author: Giseldo da Silva Neo
+Um modelo preditivo para Story Points a partir das User Storys. Código Python.  Notebooks e Script.
 
 giseldo@gmail.com
 
