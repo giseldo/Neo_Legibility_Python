@@ -1,6 +1,6 @@
 # Neo Legibility Model
 
-Um modelo preditivo para Story Points a partir das User Storys.
+Um modelo preditivo para Story Points a partir das User Storys. Código Python.  Notebooks e Script.
 
 # How to Cite
 
