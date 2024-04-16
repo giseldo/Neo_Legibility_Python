@@ -31,7 +31,7 @@ def generate_mae_teste_fig(name):
     Args:
         name: Nome do arquivo CSV
     '''
-    filename = 'data/neo/{}.csv'.format(name)
+    filename = 'data/neo/csv/{}.csv'.format(name)
     df_full = pd.read_csv(filename)
     
     # nova coluna
@@ -68,16 +68,16 @@ def generate_mae_teste_fig(name):
     df_results = pd.DataFrame(data=[['mae_media_sp', mae_media_sp, 'red']], columns=['modelo', 'MAE Teste', 'cor'])
     
     # bow com SVR
-    vec = CountVectorizer()
-    bow_treino = vec.fit_transform(dados_treino['context'])
-    bow_df_treino = pd.DataFrame(bow_treino.toarray(), columns=vec.get_feature_names_out())
-    bow_teste = vec.transform(dados_teste['context'])
-    bow_df_teste = pd.DataFrame(bow_teste.toarray(), columns=vec.get_feature_names_out())
-    model = SVR(kernel='linear')
-    model.fit(bow_df_treino, dados_treino['storypoints'])
-    y_pred = model.predict(bow_df_teste)
-    mae_bow = mean_absolute_error(dados_teste['storypoints'], y_pred)
-    df_results = df_results.append({'modelo':'mae_bow', 'MAE Teste': mae_bow, 'cor':'green'}, ignore_index=True)
+    #vec = CountVectorizer()
+    #bow_treino = vec.fit_transform(dados_treino['context'])
+    #bow_df_treino = pd.DataFrame(bow_treino.toarray(), columns=vec.get_feature_names_out())
+    #bow_teste = vec.transform(dados_teste['context'])
+    #bow_df_teste = pd.DataFrame(bow_teste.toarray(), columns=vec.get_feature_names_out())
+    #model = SVR(kernel='linear')
+    #model.fit(bow_df_treino, dados_treino['storypoints'])
+    #y_pred = model.predict(bow_df_teste)
+    #mae_bow = mean_absolute_error(dados_teste['storypoints'], y_pred)
+    #df_results = df_results.append({'modelo':'mae_bow', 'MAE Teste': mae_bow, 'cor':'green'}, ignore_index=True)
     
     # tf-idf com SVR
     vec = TfidfVectorizer(max_features=50)
